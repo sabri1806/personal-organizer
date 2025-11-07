@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { act } from 'react'
+
 
 const loadDataFromLocalStorage = () => {
     try {
@@ -17,7 +17,7 @@ const saveDataToLocalStorage = (tasks) => {
 const taskSlice = createSlice({
     name: 'tasks',
     initialState: {
-        tasks: [],
+        tasks: loadDataFromLocalStorage(),
         filter: {
             status:'all',
             search: '',
