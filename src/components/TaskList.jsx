@@ -60,10 +60,10 @@ const TaskList = () => {
                 className="w-full p-2 border rounded mb-4" />
 
             {/* AI suggest UI */}
-            <div className="flex gap-2 mb-4">
+            <div className="flex flex-col gap-3 mb-4">
                 <button
                     onClick={handleTaskSuggest}
-                    className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+                    className=" w-full bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
                 >
                     🤖 Suggest a task using AI
                 </button>
@@ -73,7 +73,7 @@ const TaskList = () => {
                     placeholder="AI suggested task"
                     value={newTaskSuggest}
                     onChange={(e) => setNewTaskSuggest(e.target.value)}
-                    className="border p-2 rounded flex-1"
+                    className="border p-2 rounded w-full"
                 />
             </div>
 
