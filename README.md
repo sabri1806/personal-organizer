@@ -1,16 +1,60 @@
-# React + Vite
+  # Personal Task Manager App (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and fast task manager built with **React + Vite + Redux**.  
+The app provides a basic CRUD for tasks, a search bar, task filtering by status, and an AI-powered task suggestion feature.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add, edit, and delete tasks** (basic CRUD).
+- **Search** tasks by text.
+- **Filter tasks**:
+  - All tasks  
+  - Completed  
+  - Pending
+- **AI Suggestion Button**:  
+  Calls a separate backend service that interacts with the Gemini API to generate example tasks for React practice.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React**
+- **Vite**
+- **Redux Toolkit**
+- **TailwindCSS**
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone this repository:
+   ```bash
+   git clone <repo-url>```
+
+2.	Install dependencies:
+
+  ```npm install```
+3. 	Run the development server:
+
+```npm run dev``
+
+The app will start at:
+
+> 👉 http://localhost:5173/
+
+📁 Project Structure
+src/
+ ├── components/        # UI components
+ ├── features/          # Redux slices
+ ├── store/             # Redux store configuration
+ ├── App.jsx
+ ├── main.jsx
+
+ 🤖 AI Suggestion Feature
+
+The “Suggest Task” button sends a request to a backend project created separately.
+>  be-personal-organizer-app
+
+That backend communicates with Gemini API to return a suggested task description.
+
+This feature is optional and works as an simple example of integrating AI into a React app.
+
+📄 License
+
+This project is for learning and personal use.
