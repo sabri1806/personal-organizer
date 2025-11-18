@@ -30,7 +30,7 @@ const taskSlice = createSlice({
         }
     },
     reducers: {
-        //for each feature
+        //for each ft
         addTask: (state, action) => {
             state.tasks.push(action.payload);
             saveDataToLocalStorage(state.tasks)

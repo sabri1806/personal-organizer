@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toogleTasksComplete, editTask, deleteTask, setSearchFilter } from "../redux/features/taskSlice";
+import { toogleTasksComplete, editTask, deleteTask, setSearchFilter, setStatusFilter } from "../redux/features/taskSlice";
 import { getSuggestedTask } from "../utils/aiSuggestions";
 
 const TaskList = () => {
@@ -45,7 +45,7 @@ const TaskList = () => {
             const suggestion = await getSuggestedTask();
             setNewTaskSuggest(suggestion);
         } catch (error) {
-            console.error("Error obteniendo sugerencia:", error);
+            console.error("Error getting suggestion:", error);
         }
     }
 
@@ -59,6 +59,20 @@ const TaskList = () => {
                 onChange={(e) => dispatch(setSearchFilter(e.target.value))}
                 className="w-full p-2 border rounded mb-4" />
 
+            {/* filter task*/}
+            <div className="flex gap-4 mb-4">
+                {
+                    ['all', 'completed', 'pending'].map(status => (
+                        <button
+                            key={status}
+                            onClick={() => {dispatch(setStatusFilter(status))}}
+                            className={`px-5 py-2 rounded border ${filter.status === status ? 'bg-blue-500 text-white' :
+                                'bg-white'}`}>{status.charAt(0).toUpperCase() + status.slice(1)}
+                        </button>
+                    ))
+                }
+            </div>
+
             {/* AI suggest UI */}
             <div className="flex flex-col gap-3 mb-4">
                 <button
@@ -67,7 +81,6 @@ const TaskList = () => {
                 >
                     🤖 Suggest a task using AI
                 </button>
-
                 <input
                     type="text"
                     placeholder="AI suggested task"
@@ -114,8 +127,6 @@ const TaskList = () => {
 
                     ))
                 }
-
-
             </ul>
         </div>
     )
