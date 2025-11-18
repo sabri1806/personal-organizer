@@ -25,26 +25,27 @@ The app provides a basic CRUD for tasks, a search bar, task filtering by status,
 
 1. Clone this repository:
    ```bash
-   git clone <repo-url>```
+   git clone <repo-url>
 
 2.	Install dependencies:
 
   ```npm install```
 3. 	Run the development server:
 
-```npm run dev``
+```npm run dev``` 
 
 The app will start at:
 
 > 👉 http://localhost:5173/
 
 📁 Project Structure
+```text
 src/
- ├── components/        # UI components
- ├── features/          # Redux slices
- ├── store/             # Redux store configuration
- ├── App.jsx
- ├── main.jsx
+ ├── components/        # UI components
+ ├── features/          # Redux slices
+ ├── store/             # Redux store configuration
+ ├── App.jsx
+ └── main.jsx
 
  🤖 AI Suggestion Feature
 
